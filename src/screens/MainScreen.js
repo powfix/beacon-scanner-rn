@@ -77,20 +77,27 @@ class Screen extends BaseScreen {
     });
 
     return (
-      <SafeAreaView style={{flex: 1, backgroundColor: '#333'}}>
-        <StatusBar backgroundColor={'#333'}/>
+      <View style={{flex: 1, alignItems: 'center', justifyContent: 'center', backgroundColor: '#333'}}>
+        <StatusBar backgroundColor={'#000'}/>
 
-        <View style={{flex: 1, alignItems: 'center', justifyContent: 'center'}}>
-          <FlatList
-            style={{alignSelf: 'stretch'}}
-            contentContainerStyle={{flexGrow: 1, paddingTop: 30, paddingBottom: 30, paddingHorizontal: 15}}
-            keyExtractor={(item) => item.id}
-            data={devices}
-            renderItem={this.renderItem}
-            onRefresh={this.onRefresh}
-            refreshing={false}/>
-        </View>
-      </SafeAreaView>
+        <SafeAreaView style={{alignSelf: 'stretch', backgroundColor: '#000'}} barStyle={'light-content'}>
+          <View style={{flexDirection: 'row', alignSelf: 'stretch', alignItems: 'center', paddingVertical: 10, backgroundColor: '#000'}}>
+            <View style={{paddingHorizontal: 18}}>
+              <Text style={{color: '#FFF', fontWeight: 'bold', fontSize: 24}}>BLE Scanner</Text>
+              <Text style={{color: '#FFF', fontSize: 14}}>ZEROWEB Asha</Text>
+            </View>
+          </View>
+        </SafeAreaView>
+
+        <FlatList
+          style={{alignSelf: 'stretch'}}
+          contentContainerStyle={{flexGrow: 1, paddingTop: 10, paddingBottom: 30, paddingHorizontal: 15}}
+          keyExtractor={(item) => item.id}
+          data={devices}
+          renderItem={this.renderItem}
+          onRefresh={this.onRefresh}
+          refreshing={false}/>
+      </View>
     );
   }
 }
