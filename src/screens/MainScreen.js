@@ -1,5 +1,15 @@
 import React, { useCallback } from "react";
-import { FlatList, Image, SafeAreaView, StatusBar, Text, TouchableOpacity, View } from "react-native";
+import {
+  Alert,
+  FlatList,
+  Image,
+  PermissionsAndroid, Platform,
+  SafeAreaView,
+  StatusBar,
+  Text,
+  TouchableOpacity,
+  View,
+} from "react-native";
 import { inject } from "mobx-react/src/inject";
 import { BleManager, Device, ScanMode } from "react-native-ble-plx";
 import { BaseScreen } from "./BaseScreen";
@@ -58,20 +68,44 @@ class Screen extends BaseScreen {
   };
 
   startScan = () => {
-    this.startRefreshing();
-    this.bleManager.startDeviceScan([], {scanMode: ScanMode.LowLatency}, (err, scannedDevice) => {
-      if (err) return;
+    const doNext = () => {
+      this.startRefreshing();
+      this.bleManager.startDeviceScan([], {scanMode: ScanMode.LowLatency}, (err, scannedDevice) => {
+        if (err) return;
 
-      // console.log('scanned device', scannedDevice.id);
-      if (this.devices.has(scannedDevice.id)) {
-        const device: DeviceWrapper = this.devices.get(scannedDevice.id);
-        device.set(scannedDevice);
-      } else {
-        this.devices.set(scannedDevice.id, new DeviceWrapper(scannedDevice));
-      }
+        // console.log('scanned device', scannedDevice.id);
+        if (this.devices.has(scannedDevice.id)) {
+          const device: DeviceWrapper = this.devices.get(scannedDevice.id);
+          device.set(scannedDevice);
+        } else {
+          this.devices.set(scannedDevice.id, new DeviceWrapper(scannedDevice));
+        }
 
-      this.hasNewDevices = true;
-    });
+        this.hasNewDevices = true;
+      });
+    };
+
+    if (Platform.OS === 'android') {
+      PermissionsAndroid.check(PermissionsAndroid.PERMISSIONS.ACCESS_FINE_LOCATION).then((granted) => {
+        if (!granted) {
+          PermissionsAndroid.request(PermissionsAndroid.PERMISSIONS.ACCESS_FINE_LOCATION, {
+            title: '스캔 기능 시 사용',
+            message: '주변의 BLE 기기 스캔 시 사용되는 권한입니다. 승인하지 않을 시 기능을 사용할 수 없습니다.'
+          }).then((status) => {
+            if (status === 'granted') {
+              this.startScan();
+            } else {
+              Alert.alert('권한이 부여되지 않았습니다. 앱 설정에서 허용해주세요. 이후 앱 재실행 필요.');
+            }
+          });
+          return;
+        }
+
+        doNext();
+      });
+    } else {
+      doNext();
+    }
   };
 
   stopScan = () => {
