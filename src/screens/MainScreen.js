@@ -1,5 +1,5 @@
 import React, { useCallback } from "react";
-import { FlatList, SafeAreaView, Text, View } from "react-native";
+import { FlatList, SafeAreaView, StatusBar, Text, View } from "react-native";
 import { inject } from "mobx-react/src/inject";
 import { BleManager, Device, ScanMode } from "react-native-ble-plx";
 import { BaseScreen } from "./BaseScreen";
@@ -56,10 +56,20 @@ class Screen extends BaseScreen {
   );
 
   render() {
-    const devices = Array.from(this.devices.values()).sort((d1: DeviceWrapper, d2: DeviceWrapper) => d2.rssiAverage() - d1.rssiAverage());
+    const devices = Array.from(this.devices.values()).sort((d1: DeviceWrapper, d2: DeviceWrapper) => {
+      if (d1.marked && !d2.marked) return -1;
+      if (!d1.marked && d2.marked) return 1;
+
+      if (d1.rssiAverage() > d2.rssiAverage()) return -1;
+      if (d1.rssiAverage() < d2.rssiAverage()) return 1;
+
+      return d2.rssiAverage() - d1.rssiAverage();
+    });
 
     return (
       <SafeAreaView style={{flex: 1, backgroundColor: '#333'}}>
+        <StatusBar backgroundColor={'#333'}/>
+
         <View style={{flex: 1, alignItems: 'center', justifyContent: 'center'}}>
           <FlatList
             style={{alignSelf: 'stretch'}}
