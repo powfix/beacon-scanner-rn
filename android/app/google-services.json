@@ -9,7 +9,7 @@
       "client_info": {
         "mobilesdk_app_id": "1:926803433559:android:4617c0a7230bd82798ab12",
         "android_client_info": {
-          "package_name": "kr.vhd.rn_backbone"
+          "package_name": "cloud.zeroweb.beacon_scanner"
         }
       },
       "oauth_client": [
@@ -17,7 +17,7 @@
           "client_id": "926803433559-hpb0etrj30ku10fk3j11rd35kosif9nr.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
-            "package_name": "kr.vhd.rn_backbone",
+            "package_name": "cloud.zeroweb.beacon_scanner",
             "certificate_hash": "d9d3b2d094e2fe1d7a3703c14b8f52786b63d903"
           }
         },

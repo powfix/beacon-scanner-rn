@@ -132,7 +132,7 @@ android {
     }
 
     defaultConfig {
-        applicationId "kr.vhd.rn_backbone"
+        applicationId "cloud.zeroweb.beacon_scanner"
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
         versionCode 1

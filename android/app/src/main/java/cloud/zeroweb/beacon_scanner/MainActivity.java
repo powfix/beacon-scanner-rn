@@ -1,4 +1,4 @@
-package kr.vhd.rn_backbone;
+package cloud.zeroweb.beacon_scanner;
 
 import com.facebook.react.ReactActivity;
 
