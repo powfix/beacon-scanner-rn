@@ -56,6 +56,11 @@ class Screen extends BaseScreen {
     this.setState({});
   };
 
+  onRefresh = () => {
+    this.devices.clear();
+    this.setState({});
+  }
+
   renderItem = ({item}) => (
     <DeviceComponent device={item} onPress={this.onPressDevice}/>
   );
@@ -81,7 +86,9 @@ class Screen extends BaseScreen {
             contentContainerStyle={{flexGrow: 1, paddingTop: 30, paddingBottom: 30, paddingHorizontal: 15}}
             keyExtractor={(item) => item.id}
             data={devices}
-            renderItem={this.renderItem}/>
+            renderItem={this.renderItem}
+            onRefresh={this.onRefresh}
+            refreshing={false}/>
         </View>
       </SafeAreaView>
     );

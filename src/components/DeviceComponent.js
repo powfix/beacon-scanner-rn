@@ -1,6 +1,6 @@
 import React from "react";
 import PlatformTouchable from "react-native-platform-touchable";
-import { Text, View } from "react-native";
+import { Text, TouchableOpacity, View } from "react-native";
 import PropTypes from "prop-types";
 import { DeviceWrapper } from "../models/DeviceWrapper";
 import StringUtils from "../utils/StringUtils";
@@ -23,7 +23,7 @@ export class DeviceComponent extends React.Component {
 
   render() {
     return (
-      <PlatformTouchable style={{marginVertical: 4}} background={PlatformTouchable.Ripple('#00FF00', false)} onPress={this.onPress}>
+      <TouchableOpacity style={{marginVertical: 4}} background={PlatformTouchable.Ripple('#00FF00', false)} onPress={this.onPress}>
         <View style={{flexDirection: 'row', overflow: 'hidden', borderRadius: 8, backgroundColor: '#eaeaea'}}>
           <View style={{alignSelf: 'stretch', width: 10, backgroundColor: this.props.device.marked ? '#FF0000' : 'transparent'}}/>
 
@@ -48,7 +48,7 @@ export class DeviceComponent extends React.Component {
             </View>
           </View>
         </View>
-      </PlatformTouchable>
+      </TouchableOpacity>
     )
   }
 }
