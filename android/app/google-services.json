@@ -1,0 +1,54 @@
+{
+  "project_info": {
+    "project_number": "926803433559",
+    "project_id": "rn-backbone",
+    "storage_bucket": "rn-backbone.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:926803433559:android:4617c0a7230bd82798ab12",
+        "android_client_info": {
+          "package_name": "kr.vhd.rn_backbone"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "926803433559-hpb0etrj30ku10fk3j11rd35kosif9nr.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "kr.vhd.rn_backbone",
+            "certificate_hash": "d9d3b2d094e2fe1d7a3703c14b8f52786b63d903"
+          }
+        },
+        {
+          "client_id": "926803433559-14c1u5chmimmb52tgmvf63a0iteoqk6g.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBl8F-kiT9rtIEDjgYPA0mSCvw8EH70Jg0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "926803433559-14c1u5chmimmb52tgmvf63a0iteoqk6g.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "926803433559-agbcqgm2qfi72n87mo84k7n54eo3au72.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "kr.vhd.rn-backbone"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
