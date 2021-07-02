@@ -24,12 +24,12 @@ export class DeviceComponent extends React.Component {
   render() {
     return (
       <TouchableOpacity style={{marginVertical: 4}} background={PlatformTouchable.Ripple('#00FF00', false)} onPress={this.onPress}>
-        <View style={{flexDirection: 'row', overflow: 'hidden', borderRadius: 8, backgroundColor: '#eaeaea'}}>
+        <View style={{flexDirection: 'row', alignItems: 'center', overflow: 'hidden', borderRadius: 8, backgroundColor: '#eaeaea'}}>
           <View style={{alignSelf: 'stretch', width: 10, backgroundColor: this.props.device.marked ? '#FF0000' : 'transparent'}}/>
 
           <View style={{flex: 1, flexDirection: 'row', paddingVertical: 15, paddingLeft: 10, paddingRight: 18}}>
             <View style={{flex: 1, flexDirection: 'column'}}>
-              <Text style={{fontSize: 18, color: this.props.device.name ? '#000' : '#AAA', fontWeight: 'bold'}}>{this.props.device.name || '이름이 설정되지 않음'}</Text>
+              <Text style={{fontSize: 18, color: this.props.device.name ? '#000' : '#AAA', fontWeight: 'bold'}}>{this.props.device.name || '이름없음'}</Text>
               <Text style={{marginTop: 4, fontSize: 14}}>{this.props.device.id}</Text>
             </View>
 
