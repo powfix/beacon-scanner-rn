@@ -18,16 +18,17 @@ class Screen extends BaseScreen {
   componentDidMount() {
     super.componentDidMount();
     this.startScan();
-    setInterval(() => {
+    this.removeRefresHandler = setInterval(() => {
       if (this.hasNewDevices) {
         this.setState({});
         this.hasNewDevices = false;
       }
-    }, 500);
+    }, 1000);
   }
 
   componentWillUnmount() {
     super.componentWillUnmount();
+    clearInterval(this.removeRefresHandler);
     this.stopScan();
   }
 
@@ -51,8 +52,12 @@ class Screen extends BaseScreen {
     this.bleManager.stopDeviceScan();
   };
 
+  onPressDevice = () => {
+    this.setState({});
+  };
+
   renderItem = ({item}) => (
-    <DeviceComponent device={item}/>
+    <DeviceComponent device={item} onPress={this.onPressDevice}/>
   );
 
   render() {

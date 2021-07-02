@@ -9,15 +9,21 @@ export class DeviceComponent extends React.Component {
 
   static propTypes = {
     device: PropTypes.instanceOf(DeviceWrapper).isRequired,
+    onPress: PropTypes.func,
   }
 
   state = {
     rssi: null,
   };
 
+  onPress = () => {
+    this.props.device.marked = !this.props.device.marked;
+    typeof this.props.onPress === 'function' && this.props.onPress(this.props.device);
+  };
+
   render() {
     return (
-      <PlatformTouchable style={{marginVertical: 4}} background={PlatformTouchable.Ripple('#00FF00', false)} onPress={() => this.props.device.marked = !this.props.device.marked}>
+      <PlatformTouchable style={{marginVertical: 4}} background={PlatformTouchable.Ripple('#00FF00', false)} onPress={this.onPress}>
         <View style={{flexDirection: 'row', overflow: 'hidden', borderRadius: 8, backgroundColor: '#eaeaea'}}>
           <View style={{alignSelf: 'stretch', width: 10, backgroundColor: this.props.device.marked ? '#FF0000' : 'transparent'}}/>
 
