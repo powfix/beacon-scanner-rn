@@ -505,6 +505,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = backbone/backbone.entitlements;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 37DP35F9LY;
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = backbone/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -516,7 +517,7 @@
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "kr.vhd.rn-backbone";
+				PRODUCT_BUNDLE_IDENTIFIER = "cloud.zeroweb.beacon-scanner";
 				PRODUCT_NAME = backbone;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
@@ -532,6 +533,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = backbone/backbone.entitlements;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 37DP35F9LY;
 				INFOPLIST_FILE = backbone/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -542,7 +544,7 @@
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "kr.vhd.rn-backbone";
+				PRODUCT_BUNDLE_IDENTIFIER = "cloud.zeroweb.beacon-scanner";
 				PRODUCT_NAME = backbone;
 				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
