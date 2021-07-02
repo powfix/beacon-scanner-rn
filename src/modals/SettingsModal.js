@@ -3,6 +3,7 @@ import Slider from "@react-native-community/slider";
 import { CenterModal } from "./CenterModal";
 import React from "react";
 import PropTypes from "prop-types";
+import StringUtils from "../utils/StringUtils";
 
 const REFRESH_RATE_MIN = 200;
 const REFRESH_RATE_MAX = 2000;
@@ -45,11 +46,12 @@ export class SettingsModal extends React.PureComponent {
           maximumValue={REFRESH_RATE_MAX}
           minimumTrackTintColor="#FFFFFF"
           maximumTrackTintColor="#000000"
-          step={1}
+          step={100}
           value={this.state.refresh_rate}
           onValueChange={(value) => this.setState({refresh_rate: value})}/>
+        <Text style={{color: '#FFF'}}>{StringUtils.numberWithCommas(this.state.refresh_rate)}ms</Text>
 
-        <Text style={{marginTop: 18, color: '#FFF', fontSize: 16, fontWeight: 'normal', textAlign: 'center'}}>평균값 샘플 개수{'\n'}(RSSI pool size when calc average)</Text>
+        <Text style={{marginTop: 30, color: '#FFF', fontSize: 16, fontWeight: 'normal', textAlign: 'center'}}>평균값 샘플 개수{'\n'}(RSSI pool size when calc average)</Text>
         <Slider
           style={{width: 200, height: 40}}
           minimumValue={AVERAGE_POOL_SIZE_MIN}
@@ -59,8 +61,9 @@ export class SettingsModal extends React.PureComponent {
           step={1}
           value={this.state.average_pool_size}
           onValueChange={(value) => this.setState({average_pool_size: value})}/>
+        <Text style={{color: '#FFF'}}>{StringUtils.numberWithCommas(this.state.average_pool_size)}개</Text>
 
-        <View style={{flexDirection: 'row'}}>
+        <View style={{marginTop: 18, flexDirection: 'row'}}>
           <Button title={'저장'} onPress={this.onPressSave}/>
         </View>
       </CenterModal>

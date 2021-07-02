@@ -2,7 +2,7 @@ import { Device } from "react-native-ble-plx";
 import { action } from "mobx";
 import { boundMethod } from "autobind-decorator";
 
-export const MAX_RSSI_COUNT = 10;
+export const MAX_RSSI_COUNT = 50;
 
 export class DeviceWrapper extends Device {
   rssi_log: number[] = [];
