@@ -29,7 +29,7 @@ export class DeviceComponent extends React.Component {
 
           <View style={{flex: 1, flexDirection: 'row', paddingVertical: 15, paddingLeft: 10, paddingRight: 18}}>
             <View style={{flex: 1, flexDirection: 'column'}}>
-              <Text style={{fontSize: 18, color: 'black', fontWeight: 'bold'}}>{this.props.device.name}</Text>
+              <Text style={{fontSize: 18, color: this.props.device.name ? '#000' : '#AAA', fontWeight: 'bold'}}>{this.props.device.name || '이름이 설정되지 않음'}</Text>
               <Text style={{marginTop: 4, fontSize: 14}}>{this.props.device.id}</Text>
             </View>
 
