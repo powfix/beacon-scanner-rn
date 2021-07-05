@@ -2,7 +2,7 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:backbone.xcodeproj">
+      location = "group:/Users/powfix/react-native-projects/BeaconScanner/ios/BeaconScanner.xcodeproj">
    </FileRef>
    <FileRef
       location = "group:Pods/Pods.xcodeproj">

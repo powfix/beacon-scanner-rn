@@ -11,10 +11,10 @@
 		13B07FBC1A68108700A75B9A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.m */; };
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
-		4DEAC75B02A7B5D6A50A06EC /* libPods-backbone-backboneTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DB06F73D94E160444C357D00 /* libPods-backbone-backboneTests.a */; };
-		6C822C7063E2BDAFAC424AF9 /* libPods-backbone.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B1CFE0A72D38FB8229F7C9C /* libPods-backbone.a */; };
+		594F73EBFC1BA7700121B332 /* libPods-BeaconScanner.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 49856E482DE45F2A8F43E904 /* libPods-BeaconScanner.a */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
 		BAB965B8268DA66700D7E0ED /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = BAB965B7268DA66700D7E0ED /* GoogleService-Info.plist */; };
+		EA5A9156A55F34333BDFCC9F /* libPods-BeaconScanner-BeaconScannerTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F3036187A62831B3B28A12E /* libPods-BeaconScanner-BeaconScannerTests.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -28,25 +28,29 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		00E356EE1AD99517003FC87E /* backboneTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = backboneTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		00E356EE1AD99517003FC87E /* BeaconScannerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BeaconScannerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		00E356F11AD99517003FC87E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		00E356F21AD99517003FC87E /* backboneTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = backboneTests.m; sourceTree = "<group>"; };
-		0B1CFE0A72D38FB8229F7C9C /* libPods-backbone.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-backbone.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0EA7A5ED53C67F3871C1AD90 /* Pods-backbone-backboneTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-backbone-backboneTests.debug.xcconfig"; path = "Target Support Files/Pods-backbone-backboneTests/Pods-backbone-backboneTests.debug.xcconfig"; sourceTree = "<group>"; };
 		0ED99E09573F5DF2B98EF3C7 /* Pods-backbone.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-backbone.debug.xcconfig"; path = "Target Support Files/Pods-backbone/Pods-backbone.debug.xcconfig"; sourceTree = "<group>"; };
 		12BCA01EFCC94D5391582186 /* Pods-backbone-backboneTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-backbone-backboneTests.release.xcconfig"; path = "Target Support Files/Pods-backbone-backboneTests/Pods-backbone-backboneTests.release.xcconfig"; sourceTree = "<group>"; };
-		13B07F961A680F5B00A75B9A /* backbone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = backbone.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		13B07F961A680F5B00A75B9A /* BeaconScanner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BeaconScanner.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		13B07FAF1A68108700A75B9A /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = backbone/AppDelegate.h; sourceTree = "<group>"; };
 		13B07FB01A68108700A75B9A /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = backbone/AppDelegate.m; sourceTree = "<group>"; };
 		13B07FB51A68108700A75B9A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = backbone/Images.xcassets; sourceTree = "<group>"; };
 		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = backbone/Info.plist; sourceTree = "<group>"; };
 		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = backbone/main.m; sourceTree = "<group>"; };
+		2D737A389CDFF748FD16151A /* Pods-BeaconScanner-BeaconScannerTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BeaconScanner-BeaconScannerTests.release.xcconfig"; path = "Target Support Files/Pods-BeaconScanner-BeaconScannerTests/Pods-BeaconScanner-BeaconScannerTests.release.xcconfig"; sourceTree = "<group>"; };
+		3F3036187A62831B3B28A12E /* libPods-BeaconScanner-BeaconScannerTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-BeaconScanner-BeaconScannerTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		43FB242D90AA61F99B86C7D7 /* Pods-BeaconScanner.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BeaconScanner.release.xcconfig"; path = "Target Support Files/Pods-BeaconScanner/Pods-BeaconScanner.release.xcconfig"; sourceTree = "<group>"; };
+		49856E482DE45F2A8F43E904 /* libPods-BeaconScanner.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-BeaconScanner.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = backbone/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		A8ADD066E9553C4AF53FF5FE /* Pods-BeaconScanner.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BeaconScanner.debug.xcconfig"; path = "Target Support Files/Pods-BeaconScanner/Pods-BeaconScanner.debug.xcconfig"; sourceTree = "<group>"; };
 		BAB965B2268DA36F00D7E0ED /* backbone.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; name = backbone.entitlements; path = backbone/backbone.entitlements; sourceTree = "<group>"; };
 		BAB965B7268DA66700D7E0ED /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		DB06F73D94E160444C357D00 /* libPods-backbone-backboneTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-backbone-backboneTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DF437A3A92CC965903B09708 /* Pods-backbone.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-backbone.release.xcconfig"; path = "Target Support Files/Pods-backbone/Pods-backbone.release.xcconfig"; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
+		FEA2ECD532B5B998DA311AB0 /* Pods-BeaconScanner-BeaconScannerTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BeaconScanner-BeaconScannerTests.debug.xcconfig"; path = "Target Support Files/Pods-BeaconScanner-BeaconScannerTests/Pods-BeaconScanner-BeaconScannerTests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,7 +58,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4DEAC75B02A7B5D6A50A06EC /* libPods-backbone-backboneTests.a in Frameworks */,
+				EA5A9156A55F34333BDFCC9F /* libPods-BeaconScanner-BeaconScannerTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -62,7 +66,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6C822C7063E2BDAFAC424AF9 /* libPods-backbone.a in Frameworks */,
+				594F73EBFC1BA7700121B332 /* libPods-BeaconScanner.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -104,8 +108,8 @@
 			isa = PBXGroup;
 			children = (
 				ED297162215061F000B7C4FE /* JavaScriptCore.framework */,
-				0B1CFE0A72D38FB8229F7C9C /* libPods-backbone.a */,
-				DB06F73D94E160444C357D00 /* libPods-backbone-backboneTests.a */,
+				49856E482DE45F2A8F43E904 /* libPods-BeaconScanner.a */,
+				3F3036187A62831B3B28A12E /* libPods-BeaconScanner-BeaconScannerTests.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -117,6 +121,10 @@
 				DF437A3A92CC965903B09708 /* Pods-backbone.release.xcconfig */,
 				0EA7A5ED53C67F3871C1AD90 /* Pods-backbone-backboneTests.debug.xcconfig */,
 				12BCA01EFCC94D5391582186 /* Pods-backbone-backboneTests.release.xcconfig */,
+				A8ADD066E9553C4AF53FF5FE /* Pods-BeaconScanner.debug.xcconfig */,
+				43FB242D90AA61F99B86C7D7 /* Pods-BeaconScanner.release.xcconfig */,
+				FEA2ECD532B5B998DA311AB0 /* Pods-BeaconScanner-BeaconScannerTests.debug.xcconfig */,
+				2D737A389CDFF748FD16151A /* Pods-BeaconScanner-BeaconScannerTests.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -147,8 +155,8 @@
 		83CBBA001A601CBA00E9B192 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				13B07F961A680F5B00A75B9A /* backbone.app */,
-				00E356EE1AD99517003FC87E /* backboneTests.xctest */,
+				13B07F961A680F5B00A75B9A /* BeaconScanner.app */,
+				00E356EE1AD99517003FC87E /* BeaconScannerTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -156,9 +164,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		00E356ED1AD99517003FC87E /* backboneTests */ = {
+		00E356ED1AD99517003FC87E /* BeaconScannerTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 00E357021AD99517003FC87E /* Build configuration list for PBXNativeTarget "backboneTests" */;
+			buildConfigurationList = 00E357021AD99517003FC87E /* Build configuration list for PBXNativeTarget "BeaconScannerTests" */;
 			buildPhases = (
 				32AAA4B820902AD90BD78F11 /* [CP] Check Pods Manifest.lock */,
 				00E356EA1AD99517003FC87E /* Sources */,
@@ -172,14 +180,14 @@
 			dependencies = (
 				00E356F51AD99517003FC87E /* PBXTargetDependency */,
 			);
-			name = backboneTests;
+			name = BeaconScannerTests;
 			productName = backboneTests;
-			productReference = 00E356EE1AD99517003FC87E /* backboneTests.xctest */;
+			productReference = 00E356EE1AD99517003FC87E /* BeaconScannerTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		13B07F861A680F5B00A75B9A /* backbone */ = {
+		13B07F861A680F5B00A75B9A /* BeaconScanner */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "backbone" */;
+			buildConfigurationList = 13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "BeaconScanner" */;
 			buildPhases = (
 				1259651CAAD5C6F628B1F121 /* [CP] Check Pods Manifest.lock */,
 				FD10A7F022414F080027D42C /* Start Packager */,
@@ -195,9 +203,9 @@
 			);
 			dependencies = (
 			);
-			name = backbone;
+			name = BeaconScanner;
 			productName = backbone;
-			productReference = 13B07F961A680F5B00A75B9A /* backbone.app */;
+			productReference = 13B07F961A680F5B00A75B9A /* BeaconScanner.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -217,7 +225,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 83CBB9FA1A601CBA00E9B192 /* Build configuration list for PBXProject "backbone" */;
+			buildConfigurationList = 83CBB9FA1A601CBA00E9B192 /* Build configuration list for PBXProject "BeaconScanner" */;
 			compatibilityVersion = "Xcode 12.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -230,8 +238,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				13B07F861A680F5B00A75B9A /* backbone */,
-				00E356ED1AD99517003FC87E /* backboneTests */,
+				13B07F861A680F5B00A75B9A /* BeaconScanner */,
+				00E356ED1AD99517003FC87E /* BeaconScannerTests */,
 			);
 		};
 /* End PBXProject section */
@@ -286,7 +294,7 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-backbone-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-BeaconScanner-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -308,7 +316,7 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-backbone-backboneTests-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-BeaconScanner-BeaconScannerTests-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -334,15 +342,15 @@
 			files = (
 			);
 			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-backbone-backboneTests/Pods-backbone-backboneTests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-BeaconScanner-BeaconScannerTests/Pods-BeaconScanner-BeaconScannerTests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-backbone-backboneTests/Pods-backbone-backboneTests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-BeaconScanner-BeaconScannerTests/Pods-BeaconScanner-BeaconScannerTests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-backbone-backboneTests/Pods-backbone-backboneTests-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-BeaconScanner-BeaconScannerTests/Pods-BeaconScanner-BeaconScannerTests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		8B6D1E16290367AA8335F5D6 /* [CP] Embed Pods Frameworks */ = {
@@ -351,15 +359,15 @@
 			files = (
 			);
 			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-backbone/Pods-backbone-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-BeaconScanner/Pods-BeaconScanner-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-backbone/Pods-backbone-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-BeaconScanner/Pods-BeaconScanner-frameworks-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-backbone/Pods-backbone-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-BeaconScanner/Pods-BeaconScanner-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		A9F78FAA3E0E42BF058181C6 /* [CP] Copy Pods Resources */ = {
@@ -368,15 +376,15 @@
 			files = (
 			);
 			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-backbone-backboneTests/Pods-backbone-backboneTests-resources-${CONFIGURATION}-input-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-BeaconScanner-BeaconScannerTests/Pods-BeaconScanner-BeaconScannerTests-resources-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-backbone-backboneTests/Pods-backbone-backboneTests-resources-${CONFIGURATION}-output-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-BeaconScanner-BeaconScannerTests/Pods-BeaconScanner-BeaconScannerTests-resources-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-backbone-backboneTests/Pods-backbone-backboneTests-resources.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-BeaconScanner-BeaconScannerTests/Pods-BeaconScanner-BeaconScannerTests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		E37DC1B550C6B624C029BCA1 /* [CP] Copy Pods Resources */ = {
@@ -385,15 +393,15 @@
 			files = (
 			);
 			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-backbone/Pods-backbone-resources-${CONFIGURATION}-input-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-BeaconScanner/Pods-BeaconScanner-resources-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-backbone/Pods-backbone-resources-${CONFIGURATION}-output-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-BeaconScanner/Pods-BeaconScanner-resources-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-backbone/Pods-backbone-resources.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-BeaconScanner/Pods-BeaconScanner-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		FD10A7F022414F080027D42C /* Start Packager */ = {
@@ -440,7 +448,7 @@
 /* Begin PBXTargetDependency section */
 		00E356F51AD99517003FC87E /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 13B07F861A680F5B00A75B9A /* backbone */;
+			target = 13B07F861A680F5B00A75B9A /* BeaconScanner */;
 			targetProxy = 00E356F41AD99517003FC87E /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -448,7 +456,7 @@
 /* Begin XCBuildConfiguration section */
 		00E356F61AD99517003FC87E /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 0EA7A5ED53C67F3871C1AD90 /* Pods-backbone-backboneTests.debug.xcconfig */;
+			baseConfigurationReference = FEA2ECD532B5B998DA311AB0 /* Pods-BeaconScanner-BeaconScannerTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				GCC_PREPROCESSOR_DEFINITIONS = (
@@ -469,13 +477,13 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/backbone.app/backbone";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/BeaconScanner.app/BeaconScanner";
 			};
 			name = Debug;
 		};
 		00E356F71AD99517003FC87E /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 12BCA01EFCC94D5391582186 /* Pods-backbone-backboneTests.release.xcconfig */;
+			baseConfigurationReference = 2D737A389CDFF748FD16151A /* Pods-BeaconScanner-BeaconScannerTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				COPY_PHASE_STRIP = NO;
@@ -493,13 +501,13 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/backbone.app/backbone";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/BeaconScanner.app/BeaconScanner";
 			};
 			name = Release;
 		};
 		13B07F941A680F5B00A75B9A /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 0ED99E09573F5DF2B98EF3C7 /* Pods-backbone.debug.xcconfig */;
+			baseConfigurationReference = A8ADD066E9553C4AF53FF5FE /* Pods-BeaconScanner.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
@@ -518,7 +526,7 @@
 					"-lc++",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "cloud.zeroweb.beacon-scanner";
-				PRODUCT_NAME = backbone;
+				PRODUCT_NAME = BeaconScanner;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -527,7 +535,7 @@
 		};
 		13B07F951A680F5B00A75B9A /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = DF437A3A92CC965903B09708 /* Pods-backbone.release.xcconfig */;
+			baseConfigurationReference = 43FB242D90AA61F99B86C7D7 /* Pods-BeaconScanner.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
@@ -545,7 +553,7 @@
 					"-lc++",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "cloud.zeroweb.beacon-scanner";
-				PRODUCT_NAME = backbone;
+				PRODUCT_NAME = BeaconScanner;
 				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
 			};
@@ -677,7 +685,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		00E357021AD99517003FC87E /* Build configuration list for PBXNativeTarget "backboneTests" */ = {
+		00E357021AD99517003FC87E /* Build configuration list for PBXNativeTarget "BeaconScannerTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				00E356F61AD99517003FC87E /* Debug */,
@@ -686,7 +694,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "backbone" */ = {
+		13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "BeaconScanner" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				13B07F941A680F5B00A75B9A /* Debug */,
@@ -695,7 +703,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		83CBB9FA1A601CBA00E9B192 /* Build configuration list for PBXProject "backbone" */ = {
+		83CBB9FA1A601CBA00E9B192 /* Build configuration list for PBXProject "BeaconScanner" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				83CBBA201A601CBA00E9B192 /* Debug */,
