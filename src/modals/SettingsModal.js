@@ -6,7 +6,7 @@ import PropTypes from "prop-types";
 import StringUtils from "../utils/StringUtils";
 
 const REFRESH_RATE_MIN = 200;
-const REFRESH_RATE_MAX = 2000;
+const REFRESH_RATE_MAX = 10000;
 
 const AVERAGE_POOL_SIZE_MIN = 1;
 const AVERAGE_POOL_SIZE_MAX = 20;
