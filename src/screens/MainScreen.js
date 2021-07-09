@@ -136,6 +136,11 @@ class Screen extends BaseScreen {
     this.setState({is_visible_settings_modal: true});
   };
 
+  onPressFlush = () => {
+    this.devices.clear();
+    this.setState({});
+  };
+
   renderItem = ({item}) => (
     <DeviceComponent device={item} onPress={this.onPressDevice} average_pool_size={this.average_pool_size}/>
   );
@@ -160,7 +165,7 @@ class Screen extends BaseScreen {
       return d2.rssiAverage() - d1.rssiAverage();
     });
 
-    const enableSwipeRefresh = false;
+    const enableSwipeRefresh = Platform.OS === 'android';
 
     return (
       <View style={{flex: 1, alignItems: 'center', justifyContent: 'center', backgroundColor: '#333'}}>
@@ -173,7 +178,11 @@ class Screen extends BaseScreen {
               <Text style={{color: '#FFF', fontSize: 14}}>ZEROWEB Asha</Text>
             </View>
 
-            <View style={{alignItems: 'flex-end', paddingHorizontal: 8}}>
+            <View style={{flexDirection: 'row', paddingHorizontal: 8}}>
+              <TouchableOpacity style={{padding: 8}} background={PlatformTouchable.Ripple('#000', true)} onPress={this.onPressFlush}>
+                <Image source={require('../images/ic_delete_white_24px.png')}/>
+              </TouchableOpacity>
+
               <TouchableOpacity style={{padding: 8}} background={PlatformTouchable.Ripple('#000', true)} onPress={this.onPressSetting}>
                 <Image source={require('../images/ic_settings_white_24px.png')}/>
               </TouchableOpacity>
@@ -187,7 +196,7 @@ class Screen extends BaseScreen {
           keyExtractor={(item) => item.id}
           data={devices}
           renderItem={this.renderItem}
-          onRefresh={this.onRefresh}
+          onRefresh={enableSwipeRefresh ? this.onRefresh : undefined}
           refreshing={false}/>
 
         {this.renderSettingModal()}
