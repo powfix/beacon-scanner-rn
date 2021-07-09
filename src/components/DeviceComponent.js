@@ -32,21 +32,25 @@ export class DeviceComponent extends React.Component {
           <View style={{flex: 1, flexDirection: 'row', paddingVertical: 15, paddingLeft: 10, paddingRight: 18}}>
             <View style={{flex: 1, flexDirection: 'column'}}>
               <Text style={{fontSize: 18, color: this.props.device.name ? '#000' : '#AAA', fontWeight: 'bold'}}>{this.props.device.name || '이름없음'}</Text>
-              <Text style={{marginTop: 4, fontSize: 14}}>{this.props.device.id}</Text>
+              <Text style={{marginTop: 0, fontSize: 14}}>{this.props.device.id}</Text>
+
+              <View style={{marginTop: 5, flexDirection: 'row', justifyContent: 'flex-start'}}>
+                <Text style={{alignSelf: 'center', fontSize: 12, fontWeight: 'bold', color: 'black'}}><Text>🤚 </Text>{StringUtils.numberWithCommas(this.props.device.detected_count) || '-'}</Text>
+                <Text style={{alignSelf: 'center', marginLeft: 8, fontSize: 12, fontWeight: 'bold', color: 'black'}}><Text>🔗 </Text>{this.props.device.isConnectable ? 'YES' : 'NO'}</Text>
+              </View>
             </View>
 
             <View style={{flexDirection: 'column', alignItems: 'flex-end'}}>
               <View style={{flexDirection: 'row', alignItems: 'center'}}>
-                <Text style={{alignSelf: 'center', marginLeft: 8, fontSize: 12, fontWeight: 'bold', color: 'black'}}><Text>{averageText}. </Text>{this.props.device.rssiAverage(this.props.average_pool_size, 2)}</Text>
                 <Text style={{alignSelf: 'center', marginLeft: 8, fontSize: 24, fontWeight: 'bold', color: 'black'}}>{this.props.device.rssi}</Text>
               </View>
 
-              <View style={{marginTop: 4, flexDirection: 'row', justifyContent: 'flex-end'}}>
-                <Text style={{alignSelf: 'center', marginLeft: 8, fontSize: 12, fontWeight: 'bold', color: 'black'}}><Text>🔗 </Text>{this.props.device.isConnectable ? 'YES' : 'NO'}</Text>
-                <Text style={{alignSelf: 'center', marginLeft: 8, fontSize: 12, fontWeight: 'bold', color: 'black'}}><Text>🤚 </Text>{StringUtils.numberWithCommas(this.props.device.detected_count) || '-'}회</Text>
+              <View style={{flexDirection: 'row', justifyContent: 'flex-end'}}>
                 <Text style={{alignSelf: 'center', marginLeft: 8, fontSize: 12, fontWeight: 'bold', color: 'black'}}><Text>⬇ </Text>{this.props.device.rssi_min || '-'}</Text>
                 <Text style={{alignSelf: 'center', marginLeft: 8, fontSize: 12, fontWeight: 'bold', color: 'black'}}><Text>⬆ </Text>{this.props.device.rssi_max || '-'}</Text>
               </View>
+
+              <Text style={{alignSelf: 'center', marginLeft: 8, fontSize: 12, fontWeight: 'bold', color: 'black'}}><Text>{averageText}. </Text>{this.props.device.rssiAverage(this.props.average_pool_size, 2)}</Text>
             </View>
           </View>
         </View>
