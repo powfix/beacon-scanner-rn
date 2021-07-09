@@ -46,11 +46,15 @@ export class DeviceWrapper extends Device {
   }
 
   @boundMethod
-  rssiAverage(count: number = 5): number {
+  rssiAverage(count: number = 5, digits: number): number {
     const rssi_log = this.rssi_log.slice(count * -1);
 
     let sum = 0;
     rssi_log.forEach((rssi) => sum += rssi);
-    return sum / rssi_log.length;
+
+    const average = sum / rssi_log.length;
+
+    if (typeof digits !== 'number') return average;
+    return average.toFixed(digits);
   }
 }

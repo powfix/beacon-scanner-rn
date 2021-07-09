@@ -37,7 +37,7 @@ export class DeviceComponent extends React.Component {
 
             <View style={{flexDirection: 'column', alignItems: 'flex-end'}}>
               <View style={{flexDirection: 'row', alignItems: 'center'}}>
-                <Text style={{alignSelf: 'center', marginLeft: 8, fontSize: 12, fontWeight: 'bold', color: 'black'}}><Text>{averageText}. </Text>{this.props.device.rssiAverage(this.props.average_pool_size)}</Text>
+                <Text style={{alignSelf: 'center', marginLeft: 8, fontSize: 12, fontWeight: 'bold', color: 'black'}}><Text>{averageText}. </Text>{this.props.device.rssiAverage(this.props.average_pool_size, 2)}</Text>
                 <Text style={{alignSelf: 'center', marginLeft: 8, fontSize: 24, fontWeight: 'bold', color: 'black'}}>{this.props.device.rssi}</Text>
               </View>
 
