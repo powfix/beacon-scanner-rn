@@ -9,7 +9,7 @@ const REFRESH_RATE_MIN = 200;
 const REFRESH_RATE_MAX = 10000;
 
 const AVERAGE_POOL_SIZE_MIN = 1;
-const AVERAGE_POOL_SIZE_MAX = 20;
+const AVERAGE_POOL_SIZE_MAX = 100;
 
 export class SettingsModal extends React.PureComponent {
 
