@@ -121,6 +121,10 @@ def jscFlavor = 'org.webkit:android-jsc:+'
  */
 def enableHermes = project.ext.react.get("enableHermes", false);
 
+static def getDate() {
+    return new Date().format("yyMMddHHmm")
+}
+
 android {
     ndkVersion rootProject.ext.ndkVersion
 
@@ -138,6 +142,9 @@ android {
         versionCode 2
         versionName "1.0.1"
         multiDexEnabled true
+
+        // Output APK
+        setProperty("archivesBaseName", "ZEROWEB BLE Scanner v${versionName}(${versionCode})-${getDate()}")
     }
     splits {
         abi {
