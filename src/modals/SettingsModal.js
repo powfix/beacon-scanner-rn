@@ -6,12 +6,13 @@ import PropTypes from "prop-types";
 import StringUtils from "../utils/StringUtils";
 import CheckBox from '@react-native-community/checkbox';
 import PlatformTouchable from "react-native-platform-touchable";
+import { MAX_RSSI_COUNT } from "../models/DeviceWrapper";
 
 const REFRESH_RATE_MIN = 200;
 const REFRESH_RATE_MAX = 10000;
 
 const AVERAGE_POOL_SIZE_MIN = 1;
-const AVERAGE_POOL_SIZE_MAX = 100;
+const AVERAGE_POOL_SIZE_MAX = MAX_RSSI_COUNT;
 
 export class SettingsModal extends React.PureComponent {
 
