@@ -25,7 +25,7 @@ class Screen extends BaseScreen {
   bleManager = new BleManager({});
   devices = new Map();
 
-  refresh_rate = 1000;
+  refresh_rate = 500;
   average_pool_size = 5;
   flushEveryRefresh = false;
 
