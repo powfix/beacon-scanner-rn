@@ -66,7 +66,13 @@ class Screen extends BaseScreen {
         this.setState({}, () => {
           if (this.flushEveryRefresh) {
             console.info('데이터가 렌더 직후 flushEveryRefresh 플래그에 의해 초기화 되었습니다.');
-            this.devices.clear();
+            this.devices.forEach((device: DeviceWrapper) => {
+              device.rssi = null;
+              device.rssi_log = [];
+              device.rssi_min = undefined;
+              device.rssi_max = undefined;
+              device.detected_count = 0;
+            })
           }
         });
         this.hasNewDevices = false;
