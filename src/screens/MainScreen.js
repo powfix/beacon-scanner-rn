@@ -27,6 +27,7 @@ class Screen extends BaseScreen {
 
   refresh_rate = 1000;
   average_pool_size = 5;
+  flushEveryRefresh = false;
 
   state = {
     is_visible_settings_modal: false,
@@ -53,11 +54,21 @@ class Screen extends BaseScreen {
     this.average_pool_size = value;
   };
 
+  onChangeFlushEveryRefresh = (value) => {
+    console.log('onChangeFlushEveryRefresh', value);
+    this.flushEveryRefresh = value;
+  };
+
   startRefreshing = (refreshRate = this.refresh_rate) => {
     this.stopRefreshing();
     this.removeRefresHandler = setInterval(() => {
       if (this.hasNewDevices) {
-        this.setState({});
+        this.setState({}, () => {
+          if (this.flushEveryRefresh) {
+            console.info('데이터가 렌더 직후 flushEveryRefresh 플래그에 의해 초기화 되었습니다.');
+            this.devices.clear();
+          }
+        });
         this.hasNewDevices = false;
       }
     }, refreshRate);
@@ -134,6 +145,7 @@ class Screen extends BaseScreen {
       visible={this.state.is_visible_settings_modal}
       onChangeRefreshRate={this.onChangeRefreshRate}
       onChangeAveragePoolSize={this.onChangeAveragePoolSize}
+      onChangeFlushEveryRefresh={this.onChangeFlushEveryRefresh}
       onClose={() => this.setState({is_visible_settings_modal: false})}/>
   )
 
@@ -147,6 +159,8 @@ class Screen extends BaseScreen {
 
       return d2.rssiAverage() - d1.rssiAverage();
     });
+
+    const enableSwipeRefresh = false;
 
     return (
       <View style={{flex: 1, alignItems: 'center', justifyContent: 'center', backgroundColor: '#333'}}>

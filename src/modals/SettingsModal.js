@@ -1,9 +1,11 @@
-import { Button, Text, View } from "react-native";
+import { Button, Platform, Text, View } from "react-native";
 import Slider from "@react-native-community/slider";
 import { CenterModal } from "./CenterModal";
 import React from "react";
 import PropTypes from "prop-types";
 import StringUtils from "../utils/StringUtils";
+import CheckBox from '@react-native-community/checkbox';
+import PlatformTouchable from "react-native-platform-touchable";
 
 const REFRESH_RATE_MIN = 200;
 const REFRESH_RATE_MAX = 10000;
@@ -16,12 +18,14 @@ export class SettingsModal extends React.PureComponent {
   static propTypes = {
     onChangeRefreshRate: PropTypes.func,
     onChangeAveragePoolSize: PropTypes.func,
+    onChangeFlushEveryRefresh: PropTypes.func,
     onClose: PropTypes.func,
   };
 
   state = {
     refresh_rate: 1000,
     average_pool_size: 5,
+    flushEveryRefresh: false,
   };
 
   constructor(props) {
@@ -33,6 +37,7 @@ export class SettingsModal extends React.PureComponent {
   onPressSave = () => {
     typeof this.props.onChangeRefreshRate === 'function' && this.props.onChangeRefreshRate(this.state.refresh_rate);
     typeof this.props.onChangeAveragePoolSize === 'function' && this.props.onChangeAveragePoolSize(this.state.average_pool_size);
+    typeof this.props.onChangeFlushEveryRefresh === 'function' && this.props.onChangeFlushEveryRefresh(this.state.flushEveryRefresh);
     typeof this.props.onClose === 'function' && this.props.onClose();
   };
 
@@ -41,7 +46,7 @@ export class SettingsModal extends React.PureComponent {
       <CenterModal visible={this.props.visible} transparent animationType={'fade'} contentContainerStyle={{backgroundColor: '#333'}}>
         <Text style={{color: '#FFF', fontSize: 16, fontWeight: 'normal', textAlign: 'center'}}>새로고침 주기(Refresh rate)</Text>
         <Slider
-          style={{width: 200, height: 40}}
+          style={{alignSelf: 'stretch'}}
           minimumValue={REFRESH_RATE_MIN}
           maximumValue={REFRESH_RATE_MAX}
           minimumTrackTintColor="#FFFFFF"
@@ -51,9 +56,16 @@ export class SettingsModal extends React.PureComponent {
           onValueChange={(value) => this.setState({refresh_rate: value})}/>
         <Text style={{color: '#FFF'}}>{StringUtils.numberWithCommas(this.state.refresh_rate)}ms</Text>
 
-        <Text style={{marginTop: 30, color: '#FFF', fontSize: 16, fontWeight: 'normal', textAlign: 'center'}}>평균값 샘플 개수{'\n'}(RSSI pool size when calc average)</Text>
+        <View style={{flexDirection: 'row', alignItems: 'center'}}>
+          <CheckBox value={this.state.flushEveryRefresh} onValueChange={(value) => this.setState({flushEveryRefresh: value})}/>
+          <PlatformTouchable style={{}} background={PlatformTouchable.Ripple('#000', true)} onPress={() => this.setState((p) => ({ flushEveryRefresh: !p.flushEveryRefresh }))}>
+            <Text style={{color: '#FFF'}}>Flush data every refresh</Text>
+          </PlatformTouchable>
+        </View>
+
+        <Text style={{marginTop: 30, color: '#FFF', fontSize: 16, fontWeight: 'normal', textAlign: 'center'}}>평균값 산출을 위한 RSSI pool size</Text>
         <Slider
-          style={{width: 200, height: 40}}
+          style={{alignSelf: 'stretch'}}
           minimumValue={AVERAGE_POOL_SIZE_MIN}
           maximumValue={AVERAGE_POOL_SIZE_MAX}
           minimumTrackTintColor="#FFFFFF"
