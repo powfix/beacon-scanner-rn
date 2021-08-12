@@ -25,9 +25,11 @@ class Screen extends BaseScreen {
   bleManager = new BleManager({});
   devices = new Map();
 
-  refresh_rate = 500;
+  refresh_rate = 1000;
+  flush_rate = 2000;
   average_pool_size = 5;
-  flushEveryRefresh = false;
+
+  lastFlush = new Date().getTime();
 
   state = {
     is_visible_settings_modal: false,
@@ -49,14 +51,14 @@ class Screen extends BaseScreen {
     this.startRefreshing(value);
   };
 
+  onChangeFlushRate = (value) => {
+    console.log('onChangeFlushRate', value);
+    this.flush_rate = value;
+  };
+
   onChangeAveragePoolSize = (value) => {
     console.log('onChangeAveragePoolSize', value);
     this.average_pool_size = value;
-  };
-
-  onChangeFlushEveryRefresh = (value) => {
-    console.log('onChangeFlushEveryRefresh', value);
-    this.flushEveryRefresh = value;
   };
 
   startRefreshing = (refreshRate = this.refresh_rate) => {
@@ -64,7 +66,9 @@ class Screen extends BaseScreen {
     this.removeRefresHandler = setInterval(() => {
       if (this.hasNewDevices) {
         this.setState({}, () => {
-          if (this.flushEveryRefresh) {
+          const current = new Date().getTime();
+          const shouldFlush = current - this.lastFlush > this.flush_rate;
+          if (shouldFlush) {
             console.info('데이터가 렌더 직후 flushEveryRefresh 플래그에 의해 초기화 되었습니다.');
             this.devices.forEach((device: DeviceWrapper) => {
               device.rssi = null;
@@ -72,7 +76,8 @@ class Screen extends BaseScreen {
               device.rssi_min = undefined;
               device.rssi_max = undefined;
               device.detected_count = 0;
-            })
+            });
+            this.lastFlush = current;
           }
         });
         this.hasNewDevices = false;
@@ -155,13 +160,16 @@ class Screen extends BaseScreen {
     <SettingsModal
       visible={this.state.is_visible_settings_modal}
       onChangeRefreshRate={this.onChangeRefreshRate}
+      onChangeFlushRate={this.onChangeFlushRate}
       onChangeAveragePoolSize={this.onChangeAveragePoolSize}
-      onChangeFlushEveryRefresh={this.onChangeFlushEveryRefresh}
       onClose={() => this.setState({is_visible_settings_modal: false})}/>
   )
 
   render() {
     const devices = Array.from(this.devices.values()).sort((d1: DeviceWrapper, d2: DeviceWrapper) => {
+      if (d1.rssi_log.length > 0 && d2.rssi_log.length <= 0) return -1;
+      if (d2.rssi_log.length > 0 && d1.rssi_log.length <= 0) return 1;
+
       if (d1.marked && !d2.marked) return -1;
       if (!d1.marked && d2.marked) return 1;
 

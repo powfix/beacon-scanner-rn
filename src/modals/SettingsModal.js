@@ -11,6 +11,9 @@ import { MAX_RSSI_COUNT } from "../models/DeviceWrapper";
 const REFRESH_RATE_MIN = 200;
 const REFRESH_RATE_MAX = 10000;
 
+const FLUSH_RATE_MIN = 200;
+const FLUSH_RATE_MAX = 10000;
+
 const AVERAGE_POOL_SIZE_MIN = 1;
 const AVERAGE_POOL_SIZE_MAX = MAX_RSSI_COUNT;
 
@@ -18,15 +21,15 @@ export class SettingsModal extends React.PureComponent {
 
   static propTypes = {
     onChangeRefreshRate: PropTypes.func,
+    onChangeFlushRate: PropTypes.func,
     onChangeAveragePoolSize: PropTypes.func,
-    onChangeFlushEveryRefresh: PropTypes.func,
     onClose: PropTypes.func,
   };
 
   state = {
-    refresh_rate: 500,
+    refresh_rate: 1000,
+    flush_rate: 2000,
     average_pool_size: 5,
-    flushEveryRefresh: false,
   };
 
   constructor(props) {
@@ -37,8 +40,8 @@ export class SettingsModal extends React.PureComponent {
 
   onPressSave = () => {
     typeof this.props.onChangeRefreshRate === 'function' && this.props.onChangeRefreshRate(this.state.refresh_rate);
+    typeof this.props.onChangeFlushRate === 'function' && this.props.onChangeFlushRate(this.state.flush_rate);
     typeof this.props.onChangeAveragePoolSize === 'function' && this.props.onChangeAveragePoolSize(this.state.average_pool_size);
-    typeof this.props.onChangeFlushEveryRefresh === 'function' && this.props.onChangeFlushEveryRefresh(this.state.flushEveryRefresh);
     typeof this.props.onClose === 'function' && this.props.onClose();
   };
 
@@ -57,8 +60,18 @@ export class SettingsModal extends React.PureComponent {
           onValueChange={(value) => this.setState({refresh_rate: value})}/>
         <Text style={{color: '#FFF'}}>{StringUtils.numberWithCommas(this.state.refresh_rate)}ms</Text>
 
+        <Slider
+          style={{alignSelf: 'stretch'}}
+          minimumValue={FLUSH_RATE_MIN}
+          maximumValue={FLUSH_RATE_MAX}
+          minimumTrackTintColor="#FFFFFF"
+          maximumTrackTintColor="#000000"
+          step={100}
+          value={this.state.flush_rate}
+          onValueChange={(value) => this.setState({flush_rate: value})}/>
+        <Text style={{color: '#FFF'}}>{StringUtils.numberWithCommas(this.state.flush_rate)}ms</Text>
+
         <View style={{flexDirection: 'row', alignItems: 'center'}}>
-          <CheckBox value={this.state.flushEveryRefresh} onValueChange={(value) => this.setState({flushEveryRefresh: value})}/>
           <PlatformTouchable style={{}} background={PlatformTouchable.Ripple('#000', true)} onPress={() => this.setState((p) => ({ flushEveryRefresh: !p.flushEveryRefresh }))}>
             <Text style={{color: '#FFF'}}>Flush data every refresh</Text>
           </PlatformTouchable>
