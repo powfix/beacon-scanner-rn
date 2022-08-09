@@ -167,11 +167,11 @@ class Screen extends BaseScreen {
 
   render() {
     const devices = Array.from(this.devices.values()).sort((d1: DeviceWrapper, d2: DeviceWrapper) => {
-      if (d1.rssi_log.length > 0 && d2.rssi_log.length <= 0) return -1;
-      if (d2.rssi_log.length > 0 && d1.rssi_log.length <= 0) return 1;
-
       if (d1.marked && !d2.marked) return -1;
       if (!d1.marked && d2.marked) return 1;
+
+      if (d1.rssi_log.length > 0 && d2.rssi_log.length <= 0) return -1;
+      if (d2.rssi_log.length > 0 && d1.rssi_log.length <= 0) return 1;
 
       if (d1.rssiAverage() > d2.rssiAverage()) return -1;
       if (d1.rssiAverage() < d2.rssiAverage()) return 1;
