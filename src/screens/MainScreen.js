@@ -189,7 +189,7 @@ class Screen extends BaseScreen {
           <View style={{flexDirection: 'row', alignSelf: 'stretch', alignItems: 'center', paddingVertical: 10, backgroundColor: '#000'}}>
             <View style={{flex: 1, paddingHorizontal: 18}}>
               <Text style={{color: '#FFF', fontWeight: 'bold', fontSize: 20}}>BLE Scanner</Text>
-              <Text style={{color: '#FFF', fontSize: 14}}>ZEROWEB Asha</Text>
+              <Text style={{color: '#FFF', fontSize: 14}}>기능/개발 문의 개발팀 Asha</Text>
             </View>
 
             <View style={{flexDirection: 'row', paddingHorizontal: 8}}>
