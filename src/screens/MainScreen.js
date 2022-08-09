@@ -95,7 +95,10 @@ class Screen extends BaseScreen {
       this.bleManager.startDeviceScan([], {scanMode: ScanMode.LowLatency}, (err, scannedDevice) => {
         if (err) return;
 
-        // console.log('scanned device', scannedDevice.id);
+        if (scannedDevice?.name?.includes('Plutocon')) {
+          console.log('scanned device', `${scannedDevice.id}(${scannedDevice.name})`, scannedDevice.rssi);
+        }
+
         if (this.devices.has(scannedDevice.id)) {
           const device: DeviceWrapper = this.devices.get(scannedDevice.id);
           device.set(scannedDevice);
